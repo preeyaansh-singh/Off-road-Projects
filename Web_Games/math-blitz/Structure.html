@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Math Blitz ⚡</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="game">
+  <h1>⚡ Math Blitz</h1>
+
+  <div class="stats">
+    <p>Score: <span id="score">0</span></p>
+    <p>Time: <span id="time">10</span>s</p>
+    <p>Level: <span id="level">1</span></p>
+  </div>
+
+  <div class="question" id="question">5 + 3</div>
+
+  <input type="number" id="answer" placeholder="Your answer" autofocus>
+
+  <button onclick="submitAnswer()">Submit</button>
+
+  <p id="feedback"></p>
+  <select id="mode">
+  <option value="easy">Easy</option>
+  <option value="medium">Medium</option>
+  <option value="hard">Hard</option>
+</select>
+
+<p>High Score: <span id="highscore">0</span></p>
+<p>Combo: <span id="combo">0</span></p>
+
+<audio id="correctSound" src="https://assets.mixkit.co/sfx/preview/mixkit-game-success-1945.mp3"></audio>
+<audio id="wrongSound" src="https://assets.mixkit.co/sfx/preview/mixkit-losing-drums-2023.mp3"></audio>
+</div>
+
+<script src="Mind.js"></script>
+</body>
+</html>
