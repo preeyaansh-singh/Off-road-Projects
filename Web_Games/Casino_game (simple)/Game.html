@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blavia Casino</title>
+  <link rel="stylesheet" href="Game.css">
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+  <h1 class="logo">👑 BLAVIA CASINO</h1>
+
+  <div class="card">
+    <h2>💰 Balance: ₹<span id="balance">500</span></h2>
+
+    <div class="inputs">
+      <input type="number" id="bet" placeholder="Bet Amount">
+      
+      <select id="difficulty">
+        <option value="50">Easy (1-50)</option>
+        <option value="100">Medium (1-100)</option>
+        <option value="200">Hard (1-200)</option>
+      </select>
+
+      <input type="number" id="guess" placeholder="Your Guess">
+    </div>
+
+    <button onclick="playGame()">♠ PLAY</button>
+  </div>
+
+  <div class="pool-box">
+    <h3>🎲 Pool Numbers</h3>
+    <div id="pool"></div>
+  </div>
+
+  <div id="result"></div>
+</div>
+
+<script src="Game.js"></script>
+</body>
+</html>
