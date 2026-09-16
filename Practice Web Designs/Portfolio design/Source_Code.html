@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Preeyaansh Singh | Portfolio</title>
+
+    <style>
+
+        /* ------------------------------
+           BASIC RESET
+        ------------------------------ */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #08050c;
+            color: #f5f1f7;
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
+
+
+        /* ------------------------------
+           AMBIENT BACKGROUND
+        ------------------------------ */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #6500a8;
+            filter: blur(180px);
+            opacity: 0.18;
+            border-radius: 50%;
+            top: -200px;
+            left: -150px;
+            z-index: -2;
+            animation: ambient 8s ease-in-out infinite alternate;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            background: #2600ff;
+            filter: blur(180px);
+            opacity: 0.12;
+            border-radius: 50%;
+            right: -150px;
+            bottom: -150px;
+            z-index: -2;
+            animation: ambient2 10s ease-in-out infinite alternate;
+        }
+
+        @keyframes ambient {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(120px, 100px);
+            }
+        }
+
+        @keyframes ambient2 {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(-100px, -80px);
+            }
+        }
+
+
+        /* ------------------------------
+           HEADER
+        ------------------------------ */
+
+        .Head {
+            width: 90%;
+            margin: 25px auto;
+
+            padding: 18px 25px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(255, 255, 255, 0.04);
+
+            border: 1px solid rgba(255, 255, 255, 0.08);
+
+            border-radius: 18px;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 10px 40px rgba(0, 0, 0, 0.4);
+
+            position: relative;
+            z-index: 10;
+        }
+
+
+        /* ------------------------------
+           NAME
+        ------------------------------ */
+
+        .name {
+            color: white;
+
+            font-family:
+                Impact,
+                Haettenschweiler,
+                'Arial Narrow Bold',
+                sans-serif;
+
+            font-size: 30px;
+
+            letter-spacing: 1px;
+
+            background: linear-gradient(
+                90deg,
+                #ffffff,
+                #b77cff
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            transition: 0.4s ease;
+        }
+
+        .name:hover {
+            letter-spacing: 3px;
+        }
+
+
+        /* ------------------------------
+           NAVIGATION
+        ------------------------------ */
+
+        .nav-link {
+            padding: 12px 5px;
+        }
+
+        ul {
+            display: flex;
+
+            list-style: none;
+
+            gap: 30px;
+        }
+
+        ul li {
+            color: #cfc7d8;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            position: relative;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
+        }
+
+        /* Animated underline */
+
+        ul li::after {
+            content: "";
+
+            position: absolute;
+
+            width: 0;
+            height: 2px;
+
+            left: 0;
+            bottom: -7px;
+
+            background: #b96cff;
+
+            box-shadow:
+                0 0 10px #b96cff;
+
+            transition: width 0.3s ease;
+        }
+
+        ul li:hover {
+            color: white;
+
+            transform: translateY(-2px);
+        }
+
+        ul li:hover::after {
+            width: 100%;
+        }
+
+
+        /* ------------------------------
+           MAIN SECTION
+        ------------------------------ */
+
+        .body {
+            width: 90%;
+
+            min-height: 75vh;
+
+            margin: 70px auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 90px;
+        }
+
+
+        /* ------------------------------
+           IMAGE
+        ------------------------------ */
+
+        .image {
+            position: relative;
+
+            width: 380px;
+
+            flex-shrink: 0;
+        }
+
+        .image::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -15px;
+
+            border-radius: 25px;
+
+            background: linear-gradient(
+                135deg,
+                #8c00ff,
+                transparent,
+                #3900ff
+            );
+
+            opacity: 0.4;
+
+            filter: blur(25px);
+
+            z-index: -1;
+
+            animation: imageGlow 5s ease-in-out infinite alternate;
+        }
+
+        @keyframes imageGlow {
+            from {
+                opacity: 0.25;
+            }
+
+            to {
+                opacity: 0.55;
+            }
+        }
+
+        .image img {
+            width: 100%;
+
+            display: block;
+
+            border-radius: 20px;
+
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            filter:
+                brightness(0.85)
+                contrast(1.05);
+
+            transition:
+                transform 0.6s ease,
+                filter 0.6s ease,
+                box-shadow 0.6s ease;
+        }
+
+        .image:hover img {
+            transform: scale(1.04) translateY(-5px);
+
+            filter:
+                brightness(1)
+                contrast(1.08);
+
+            box-shadow:
+                0 20px 70px rgba(117, 0, 255, 0.3);
+        }
+
+
+        /* ------------------------------
+           CONTENT
+        ------------------------------ */
+
+        .content {
+            max-width: 650px;
+        }
+
+        .content h3 {
+            color: #a875ff;
+
+            font-size: 16px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 15px;
+        }
+
+        .content h1 {
+            font-size: clamp(45px, 6vw, 80px);
+
+            line-height: 1;
+
+            margin-bottom: 25px;
+
+            background: linear-gradient(
+                120deg,
+                #ffffff,
+                #c084fc,
+                #7c3aed
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .content p {
+            color: #a9a1b2;
+
+            line-height: 1.8;
+
+            font-size: 16px;
+
+            max-width: 600px;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* ------------------------------
+           BUTTON
+        ------------------------------ */
+
+        .button {
+            border: 1px solid rgba(184, 108, 255, 0.5);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(150, 0, 255, 0.25),
+                    rgba(80, 0, 150, 0.1)
+                );
+
+            color: white;
+
+            padding: 14px 28px;
+
+            border-radius: 50px;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .button::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: -100%;
+
+            width: 100%;
+            height: 100%;
+
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.25),
+                transparent
+            );
+
+            transition: 0.6s;
+        }
+
+        .button:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 10px 35px rgba(145, 0, 255, 0.35);
+
+            background:
+                rgba(145, 0, 255, 0.3);
+        }
+
+        .button:hover::before {
+            left: 100%;
+        }
+
+        .button:active {
+            transform: scale(0.95);
+        }
+
+
+        /* ------------------------------
+           SMALL DECORATIVE LINE
+        ------------------------------ */
+
+        .content::before {
+            content: "";
+
+            display: block;
+
+            width: 60px;
+            height: 2px;
+
+            background: #a855f7;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 0 15px #a855f7;
+        }
+
+
+        /* ------------------------------
+           RESPONSIVE DESIGN
+        ------------------------------ */
+
+        @media (max-width: 900px) {
+
+            .Head {
+                width: 94%;
+
+                flex-direction: column;
+
+                gap: 20px;
+            }
+
+            ul {
+                gap: 18px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .body {
+                flex-direction: column;
+
+                text-align: center;
+
+                gap: 50px;
+
+                margin-top: 50px;
+            }
+
+            .image {
+                width: min(80vw, 350px);
+            }
+
+            .content {
+                display: flex;
+
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+            .content h1 {
+                font-size: 55px;
+            }
+
+            .content p {
+                max-width: 550px;
+            }
+
+            .content::before {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .Head {
+                padding: 15px;
+
+                margin-top: 15px;
+            }
+
+            .name {
+                font-size: 25px;
+            }
+
+            ul {
+                gap: 15px;
+            }
+
+            ul li {
+                font-size: 12px;
+            }
+
+            .body {
+                width: 88%;
+            }
+
+            .content h1 {
+                font-size: 43px;
+            }
+
+            .content p {
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="Head">
+
+        <div>
+            <p class="name">Preeyaansh</p>
+        </div>
+
+        <nav class="nav-link">
+
+            <ul>
+                <li>About Me</li>
+                <li>My Achievements</li>
+                <li>My Goals</li>
+                <li>Contact Me</li>
+                <li>Know More?</li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <main class="body">
+
+        <div class="image">
+
+            <img src="zoro.jpg" alt="Preeyaansh Singh">
+
+        </div>
+
+
+        <div class="content">
+
+            <h3>Hello.. Myself</h3>
+
+            <h1>
+                Preeyaansh Singh
+            </h1>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Soluta culpa ad modi placeat maxime. Repellendus dolor
+                quidem odio aliquam tempore cupiditate magni id,
+                distinctio quam consequuntur cum nam optio magnam animi
+                tempora doloremque eligendi.
+            </p>
+
+            <button class="button">
+                Know More →
+            </button>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
