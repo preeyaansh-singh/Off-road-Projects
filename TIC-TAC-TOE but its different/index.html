@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#090607">
+    <title>THE NINTH SEAL — A ritual in nine moves</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="ambient" aria-hidden="true"></div>
+    <div class="intro" id="intro">
+        <div class="intro-inner">
+            <div class="intro-mark">✳</div>
+            <p class="eyebrow">AN INTERACTIVE RITUAL · EDITION I</p>
+            <h1>THE NINTH<br><em>SEAL</em></h1>
+            <p class="intro-sub">Two souls. Nine squares. One fate.</p><button id="enter" class="primary">ENTER THE
+                RITUAL <span>↗</span></button>
+        </div><button id="skip" class="skip">SKIP INTRO ↗</button>
+    </div>
+    <div class="shell">
+        <header><a class="brand" href="#" aria-label="The Ninth Seal home"><span class="brand-mark">✳</span><span>THE
+                    NINTH SEAL<small>AN INTERACTIVE RITUAL</small></span></a>
+            <div class="header-right"><span class="edition">VOL. 01 / 09</span><button class="icon-button" id="sound"
+                    aria-label="Mute sound" aria-pressed="true">♫</button><button class="outline" id="restart">↻
+                    <span>RESET ROUND</span></button></div>
+        </header>
+        <main>
+            <div class="section-kicker"><span>THE ARENA</span><span>EST. MMXXVI <i></i> TWO SHALL ENTER</span></div>
+            <div class="headline">
+                <div>
+                    <p class="eyebrow red">THE GAME OF CONSEQUENCE</p>
+                    <h1>CHOOSE YOUR <em>FATE.</em></h1>
+                    <p>Every mark is a promise. Every move, a sacrifice.</p>
+                </div>
+                <div class="round-indicator"><span>ROUND</span><strong id="round">01</strong><span>OF ∞</span></div>
+            </div>
+            <div class="arena">
+                <div class="fighter active" id="playerX">
+                    <div class="fighter-top"><span class="crest x">×</span><span class="tag">PLAYER 01</span></div>
+                    <h2>THE CRIMSON<br>ORDER</h2>
+                    <div class="fighter-bottom"><span id="xRole">THE FIRST BLOOD</span><strong
+                            id="xWins">00</strong><small>VICTORIES</small></div>
+                </div>
+                <div class="board-panel">
+                    <div class="board-top"><span>✦ THE SACRED GRID</span><span id="moveCount">00 / 09</span></div>
+                    <div class="board" id="board" role="group" aria-label="Tic tac toe game board"></div>
+                    <div class="board-bottom"><span class="live-dot"></span><span id="status" role="status"
+                            aria-live="polite">THE CRIMSON ORDER SHALL BEGIN</span></div>
+                </div>
+                <div class="fighter" id="playerO">
+                    <div class="fighter-top"><span class="crest o">○</span><span class="tag">PLAYER 02</span></div>
+                    <h2>THE HOLLOW<br>COVENANT</h2>
+                    <div class="fighter-bottom"><span id="oRole">THE ETERNAL VOID</span><strong
+                            id="oWins">00</strong><small>VICTORIES</small></div>
+                </div>
+            </div>
+            <div class="lower">
+                <div class="mode-panel">
+                    <div class="panel-title"><span>01 / CHOOSE YOUR TRIAL</span><span>⌁</span></div>
+                    <div class="modes"><button class="mode selected" data-mode="duel"><span>⚔</span><strong>DUEL OF
+                                SOULS</strong><small>LOCAL TWO PLAYER</small></button><button class="mode"
+                            data-mode="challenge"><span>◈</span><strong>FACE THE ORACLE</strong><small>PLAY AGAINST
+                                AI</small></button></div>
+                    <div class="difficulties" id="difficulties" hidden><span>ORACLE INTELLIGENCE</span>
+                        <div><button class="difficulty selected" data-difficulty="mortal">MORTAL</button><button
+                                class="difficulty" data-difficulty="wraith">WRAITH</button><button class="difficulty"
+                                data-difficulty="deity">DEITY</button></div>
+                    </div>
+                </div>
+                <div class="quote"><span>✳</span>
+                    <p>“The board does not decide your fate.<br><em>It merely reveals it.</em>”</p><small>— THE NINTH
+                        SEAL</small>
+                </div>
+            </div>
+        </main>
+        <footer><span>© THE NINTH SEAL</span><span>CRAFTED IN DARKNESS · PLAYED IN LIGHT</span><span>NO SOULS WERE
+                HARMED</span></footer>
+    </div>
+    <div class="result" id="result" role="dialog" aria-modal="true" aria-labelledby="resultTitle" hidden>
+        <div class="result-card"><span class="eyebrow red">THE RITUAL IS COMPLETE</span>
+            <div class="result-glyph" id="resultGlyph">×</div>
+            <h2 id="resultTitle"></h2>
+            <p id="resultText"></p><button class="primary" id="again">BEGIN ANOTHER RITUAL ↗</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
