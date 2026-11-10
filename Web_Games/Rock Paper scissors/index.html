@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101110">
+    <meta name="description" content="A polished, ready-to-play Rock Paper Scissors duel.">
+    <title>RPS — The Classic Duel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="RPS home">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>RPS<span class="brand-period">.</span></span>
+        </a>
+        <div class="topbar-meta">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>CLASSIC MODE</span>
+          <span class="meta-divider" aria-hidden="true"></span>
+          <span>BEST OF 5</span>
+        </div>
+        <button class="icon-button" id="reset-button" type="button" aria-label="Start a new match" title="New match">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 7v5h-5M4.8 9a7.5 7.5 0 0 1 12.7-2L20 12M4 17v-5h5m10.2 3a7.5 7.5 0 0 1-12.7 2L4 12"></path>
+          </svg>
+        </button>
+      </header>
+
+      <main>
+        <section class="intro">
+          <p class="eyebrow"><span class="eyebrow-line"></span> THE ORIGINAL SHOWDOWN</p>
+          <h1>Read the room.<br><span>Make your move.</span></h1>
+          <p class="intro-copy">A little instinct goes a long way. First to three takes the match.</p>
+        </section>
+
+        <section class="match-card" aria-label="Rock Paper Scissors match">
+          <div class="match-heading">
+            <div class="round-label">
+              <span class="round-kicker">MATCH IN PROGRESS</span>
+              <span class="round-number" id="round-number">ROUND 01</span>
+            </div>
+            <div class="match-progress" aria-label="Match score">
+              <div class="score-block">
+                <span class="score-name">YOU</span>
+                <span class="score-value" id="player-score">0</span>
+              </div>
+              <span class="score-separator">:</span>
+              <div class="score-block">
+                <span class="score-name">CPU</span>
+                <span class="score-value" id="cpu-score">0</span>
+              </div>
+            </div>
+            <div class="target-label"><span class="target-icon">✳</span> FIRST TO 3</div>
+          </div>
+
+          <div class="arena" id="arena">
+            <div class="fighter player-fighter">
+              <div class="fighter-top">
+                <span class="fighter-avatar player-avatar" aria-hidden="true">Y</span>
+                <div>
+                  <span class="fighter-name">YOU</span>
+                  <span class="fighter-caption">THE CHALLENGER</span>
+                </div>
+              </div>
+              <div class="move-display" id="player-move" aria-hidden="true">
+                <span class="move-symbol">?</span>
+              </div>
+              <span class="move-caption" id="player-caption">YOUR MOVE</span>
+            </div>
+
+            <div class="versus">
+              <span class="versus-line"></span>
+              <span class="versus-mark">VS</span>
+              <span class="versus-line"></span>
+              <span class="result-chip" id="result-chip" aria-live="polite">PICK YOUR MOVE</span>
+            </div>
+
+            <div class="fighter cpu-fighter">
+              <div class="fighter-top">
+                <span class="fighter-avatar cpu-avatar" aria-hidden="true">C</span>
+                <div>
+                  <span class="fighter-name">CPU</span>
+                  <span class="fighter-caption">YOUR OPPONENT</span>
+                </div>
+              </div>
+              <div class="move-display" id="cpu-move" aria-hidden="true">
+                <span class="move-symbol">?</span>
+              </div>
+              <span class="move-caption" id="cpu-caption">WAITING...</span>
+            </div>
+          </div>
+
+          <div class="match-footer">
+            <div class="streak-display">
+              <span class="streak-icon" aria-hidden="true">↗</span>
+              <span id="streak-label">STREAK</span>
+              <strong id="streak-value">0</strong>
+            </div>
+            <p class="prompt" id="game-prompt">Choose your weapon</p>
+            <div class="rounds-display"><span id="rounds-played">0</span> ROUNDS PLAYED</div>
+          </div>
+        </section>
+
+        <section class="choices-section" aria-labelledby="choices-heading">
+          <div class="choices-heading">
+            <div>
+              <p class="eyebrow small-eyebrow">YOUR TURN</p>
+              <h2 id="choices-heading">What’s it gonna be?</h2>
+            </div>
+            <span class="keyboard-hint"><kbd>R</kbd><kbd>P</kbd><kbd>S</kbd> to play</span>
+          </div>
+          <div class="choice-grid">
+            <button class="choice-button" type="button" data-choice="rock" aria-label="Choose rock, keyboard shortcut R">
+              <span class="choice-icon rock-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="m13 34 8-15 11-7 12 4 9 10 3 15-8 12H21l-9-9z"></path><path class="icon-detail" d="m21 19 5 9m18-12-5 12m14-2-9 5M21 53l5-12m22 12-6-10"></path></svg>
+              </span>
+              <span class="choice-name">Rock</span>
+              <span class="choice-shortcut">R</span>
+            </button>
+            <button class="choice-button" type="button" data-choice="paper" aria-label="Choose paper, keyboard shortcut P">
+              <span class="choice-icon paper-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><path d="M17 8h23l9 9v39H17z"></path><path class="icon-detail" d="M40 8v10h9M24 29h18M24 37h18M24 45h12"></path></svg>
+              </span>
+              <span class="choice-name">Paper</span>
+              <span class="choice-shortcut">P</span>
+            </button>
+            <button class="choice-button" type="button" data-choice="scissors" aria-label="Choose scissors, keyboard shortcut S">
+              <span class="choice-icon scissors-icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64"><circle cx="17" cy="19" r="7"></circle><circle cx="17" cy="45" r="7"></circle><path d="m23 23 29 28M23 41l29-28M32 32l-7-7m7 7-7 7"></path></svg>
+              </span>
+              <span class="choice-name">Scissors</span>
+              <span class="choice-shortcut">S</span>
+            </button>
+          </div>
+        </section>
+
+        <footer class="page-footer">
+          <span>NO LUCK. JUST INSTINCT.</span>
+          <span>BUILT FOR THE LOVE OF THE GAME <span class="footer-star">✳</span></span>
+        </footer>
+      </main>
+    </div>
+    <div class="screen-reader-only" id="announcement" aria-live="assertive" aria-atomic="true"></div>
+  </body>
+</html>
